@@ -1,11 +1,9 @@
 #!/bin/bash
 declare TIME=`stat -f %Z $2`
 
-while [ ! -f $2 ]
-	do
+while [ ! -f $2 ]; do
 		echo "Filen $2 finnes ikke."
 		sleep $1
-		
 
 		if [ -f $2 ]
 			then
@@ -15,8 +13,7 @@ while [ ! -f $2 ]
 	done
 
 
-while [ -f $2 ]
-	do
+while [ -f $2 ]; do
 		echo "Filen $2 finnes. $(date +"%T")"
 		NEWTIME=`stat -f %Z $2`
 		sleep $1
